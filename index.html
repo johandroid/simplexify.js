@@ -2,76 +2,87 @@
 <html>
 	<head>
 		<title>Diet Problem Solver</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script type="text/javascript">	
-			// avoid broken view bug
-			if(location.hash){
-				location.hash = '';
-				location.reload();
-			}
-		</script>
-		<link rel="stylesheet" href="css/style.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		<div id="container">
-			<div id="home">
-				<span class="title">Diet Problem Solver</span>
-				<br /><br />
-				<div>
-					<img src="img/overweight.jpg"/>
+		<header>
+			<div class="row title-row">
+				<div id="app-title">
+					<a href="#home">Diet Problem Solver</a>
 				</div>
 			</div>
-			<div id="div2">
-				<div id="author">
-					<span class="title">About me</span>
-					<div class="info">
-						Hi! I'm Raven John M. Lagrimas. 2010-43168. You can find me at <br />
-						https://github.com/ravenjohn
-						<br />
-						https://facebook.com/ven.lagrimas
-					</div>
-				</div>
-				<div id="dps">
-					<span class="title">Pick your food!</span>
-					<div id="food-grid"></div>
-					<div id="search-div">Type anywhere to search...</div>
-				</div>
-			</div>
-			<div id="div3">
-				<div id="dps-results">
-					<span class="title">Results</span>
-				</div>
-				<div id="simplexify">
-					<span class="title">Simplexify</span>
-					<br class="clearfix"/><br />
-					<div class="float-left">
-						Objective Function : <input type="text" name="objective" id="objective"/>
-						<div id="constraints">
-							<button id="add_constraint">Add Constraint</button>
-							<input type="text" class="constraint"/><br/>
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<div class="nav-collapse collapse">
+							<ul class="nav" id="menu">
+								<li id="home-li">
+									<a href="#home" class="menu">Pick your Food</a>
+								</li>
+								<li id="simplexify-li">
+									<a href="#simplexify" class="menu">Simplexify</a>
+								</li>
+							</ul>
 						</div>
 					</div>
-					<textarea id="simplexify-result"></textarea>
-					<br class="clearfix"/>
-					<button id="maximize">Maximize</button>
-					<button id="minimize">Minimize</button>
+				</div>
+			</div>
+		</header>
+		<div class="container" id="container">
+			<div class="row" id="food-grid">
+				<button class="btn" onclick="$('.foodie').addClass('active');">Select All</button><button class="btn" onclick="$('.foodie.active').removeClass('active');">Deselect All</button>
+				<br class="clearfix"/>
+			</div>
+			<div class="row" id="splxfy">
+				<div class="span3">
+					<div class="smplx-box" id="function">
+						<div class="smplx-header">Objective function:</div>
+						<input type="text" id="objective_function" style="width: 90%;" value="x+y"/>
+					</div>
+					<div class="smplx-box" id="constraints">
+						<div class="smplx-header">Constraints <span class="pull-right"><button id="add_button"><i class="icon-plus"></i></button></span></div>
+						<div class="input-append">
+							<input type="text" class="constraint" value="x+y <= 2"/>
+							<span class="add-on" onclick="$(this).parent().fadeOut();"><i class="icon-minus"></i></span>
+						</div>
+						<div class="input-append">
+							<input type="text" class="constraint" value="3x+y >= 4"/>
+							<span class="add-on" onclick="$(this).parent().fadeOut();"><i class="icon-minus"></i></span>
+						</div>
+						<div class="input-append">
+							<input type="text" class="constraint" value="x>=0"/>
+							<span class="add-on" onclick="$(this).parent().fadeOut();"><i class="icon-minus"></i></span>
+						</div>
+						<div class="input-append">
+							<input type="text" class="constraint" value="y>=0"/>
+							<span class="add-on" onclick="$(this).parent().fadeOut();"><i class="icon-minus"></i></span>
+						</div>
+					</div>
+					<button class="btn btn-block btn-success btn-large" id="solve_button">SOLVE!</button>
+				</div>
+				<div class="span9">
+					<div class="smplx-box" id="simplexify-results">
+						<div class="smplx-header">Output:</div>
+						<div id="plain-results"></div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div id="menu">
-			<br /><br /><br /><br />
-			<a title="Home" href="#home" class="active" accesskey="1">
-				<img src="img/home.png" alt="Home Icon"/>
-			</a>
-			<a title="Diet Problem Solver" href="#dps" accesskey="2">
-				<img src="img/dps.png" alt="Home Icon"/>
-			</a>
-			<a title="Simplexify" href="#simplexify" accesskey="3">
-				<img src="img/geek.png" alt="Home Icon"/>
-			</a>
-		</div>
+		<footer>
+			Fork me on <a href="//github.com/ravenjohn/simplexify.js" target="_blank">github.com</a>
+		</footer>
 		<script type="text/javascript" src="js/jquery-2.0.3.js"></script>
-		<script type="text/javascript" src="js/simplexify.min.js"></script>
+		<script type="text/javascript" src="js/underscore.min.js"></script>
+		<script type="text/javascript" src="js/backbone.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/simplexify.js"></script>
 		<script type="text/javascript" src="js/scripts.js"></script>
 	</body>
 </html>

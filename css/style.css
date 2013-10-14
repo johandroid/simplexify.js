@@ -1,170 +1,133 @@
-/* html5doctor.com Reset v1.6.1 - http://cssreset.com */
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
 *{
-	font-family: "Open Sans";
-	font-size: 12px;
-	color: #666666;
+	font-family: "NewsGoth Cn BT";
+	outline: 0;
 }
-html, body{
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
+body{
+	background: #e1e1ea;
+}
+.title-row{
+	background: #a4cfa0;
+	max-height: 80px;
+}
+#app-title{
+	background: #8ac884;
+	color: #FFF;
+	max-width: 280px;
+	max-height: 100%;
+	font-size: 2.3em;
+	line-height: 80px;
 	text-align: center;
+	text-indent: 30px;
+	box-shadow: 1px 1px 5px #888;
 }
-#container{
-	position: absolute;
-	left: 0;
-	top: 0;
-	background: #e6e6e6;
-	width: 4300px;
-	padding-left: 60px;
+#app-title a{
+	color: #FFF;
 }
-#menu{
-	position: absolute;
-	left: 0;
-	background:  #1f9939;
-	width: 60px;
-	border-right: 5px solid #4AE06A;
+#app-title a:hover{
+	text-decoration: none;
 }
-#home img{
-	border: 10px solid #FFF;
+.navbar-inner{
+	background: #FFF;
+	margin: 0 1%;
+	border-radius: 0;
 }
-#menu a, #home, #dps{
-	text-align: center;
+.navbar .nav li{
+	line-height: 45px;
 }
-#menu a{
-	float: left;
-	width: 60px;
-	height: 60px;
-	margin: 0;
-	padding: 0;
-	cursor: pointer;
+.navbar .nav li a{
+	padding: 0 50px;
+	font-size: 1.3em;
+	color: #3c6439;
 }
-#menu a.active, #menu a:hover{
-	background: #43e065;
-}
-#home, #dps{
-	width: 950px;
-}
-#simplexify{
-	width: 1290px;
-	text-align: center;
-	padding-right: 200px;
-}
-#simplexify table{
-	width: 85%;
-	margin: 0 auto;
-	border-spacing: 20px 0;
-}
-#constraints{
-	margin-top: 50px;
-	height: 300px;
-	width: 100%;
-}
-#home, #div3{
-	background: #6eff8d; /* Old browsers */
-	background: -moz-radial-gradient(center, ellipse cover,  #6eff8d 1%, #99ff99 100%); /* FF3.6+ */
-	background: -webkit-radial-gradient(center, ellipse cover,  #6eff8d 1%,#99ff99 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-radial-gradient(center, ellipse cover,  #6eff8d 1%,#99ff99 100%); /* Opera 12+ */
-	background: -ms-radial-gradient(center, ellipse cover,  #6eff8d 1%,#99ff99 100%); /* IE10+ */
-	background: radial-gradient(ellipse at center,  #6eff8d 1%,#99ff99 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6eff8d', endColorstr='#99ff99',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-#div2{
-	width: 1400px;
-}
-#div3{
-	width: 1950px;
-}
-#author, #dps-results{
-	width: 360px;
-	margin-right: 90px;
-}
-#menu, #container{
-	height: 100%;
-}
-#home, #div2, #div3, #author, #dps, #dps-results, #simplexify{
-	float: left;
-	height: 100%;
-}
-.title{
-	font-size: 4em;
-	line-height: 70px;
-	color: #1f9939;
-	font-family: "Meta Bold";
-	text-shadow: 1px 1px 0 #000;
-	font-weight: normal;
-}
-#food-grid {
-	margin-left: 30px;
-	margin-top: 20px;
-	overflow: auto;
-}
-#food-grid > div{
-	float: left;
-	width: 200px;
-	margin-left: 10px;
-	text-align: center;
-	margin-bottom: 10px;
+.navbar .nav li a:hover{
+	text-decoration: underline;
+}	
+.foodie{
 	background-color: #FFFFFF;
-	border: 5px solid #FFF;
 	cursor: pointer;
-	position: relative;
 	line-height: 30px;
+	width: 210px;
+	padding: 10px 0;
+	margin: 10px;
 }
-#food-grid > div > div{
-	background-color: #FFFFFF;
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
+.foodie-details:hover, .foodie-image:hover + .foodie-details{
+	background: #c4e3c1;
+}
+.foodie.active .foodie-details{
+	background: #9fd29a;
+}
+.foodie-details{
+	margin-top: 5px;
+	padding: 0 20px;
+}
+.foodie-image{
+	margin: 0 5px;
 	width: 200px;
 	height: 200px;
 }
-#food-grid .foodie:hover, #food-grid .foodie.active{
-	box-shadow: 0 0 20px #CCC;
-	background: #1f9939;
+
+@media screen and (max-width:680px){
+	#app-title{
+		margin: 0 auto;
+	}
+	.navbar-inner{
+		margin: 0;
+	}
+}
+
+.smplx-box{
+	background: #FFF;
+	min-height: 70px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+}
+#constraints{
+	text-align: center;
+}
+#constraints .input-append{
+	float: none;
+	margin: 5px auto;
+}
+#constraints .input-append span{
+	cursor: pointer;
+}
+.smplx-header{
+	text-align: left;
+	width: 100%;
+	height: 20px;
+	background: #8ac884;
+	font-size: 1.5em;
+	padding: 5px 0;
+	text-indent: 10px;
 	color: #FFF;
+	line-height: 20px;
 }
-#dps{
-	/* background-image: url(../img/funnel-top.png); */
-	background-position: bottom center;
-	background-repeat: no-repeat;
-	position: relative;
-}
-.clearfix{
-	clear: both;
-}
-#clone{
-	z-index: 5;
-}
-#author h3{
-	line-height: 50px;
-	font-family: "Meta Normal";	
-}
-#author .info{
-	padding-left: 20px;
-	text-align: left;
-	font-size: 12px;
-	width: 300px;
-}
-#search-div{
-	height: 30px;
-	position: absolute;
-	bottom: 0px;
-	left: 30px;
-	line-height: 30px;
-	text-align: left;
-}
-#simplexify-result{
-	width: 40%;
-	max-height: 100%;
-	overflow: auto;
-	resize: none;
-	text-align: left;
-	min-height: 500px;
-	float: right;
-}
-.float-left{
+#function input[type="text"]{
+	margin: 5px;
+	width: 70%;
+	border-radius: 3px;
+	background: #FFF;
+	border: 1px solid #b3b9b3;
 	float: left;
-	width: 50%;
+}
+#simplexify-results{
+	position: relative;
+	min-height: 400px;
+}
+footer{
+	text-align: center;
+	bottom: 0;
+}
+#add_button{
+	color: white;
+	background: #9fd29a;
+	border: 0;
+	border-radius: 3px;
+	width: 25px;
+	height: 25px;
+	margin-right: 5px;
+	margin-top: -2px;
+}
+.tableau{
+	width: 100%;
 }

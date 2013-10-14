@@ -300,7 +300,7 @@
 	 * Adds a new artificial variable to the constraint.
 	 * Note: A constraint can only contain one artificial variable.
 	 */
-	Constraint.prototype.addartificialVariable = function (val) {
+	Constraint.prototype.addArtificialVariable = function (val) {
 		this.setSpecialTerm({
 			key : "artificial",
 			name : "artificial",
@@ -345,7 +345,6 @@
 				break;
 			case ">=":
 				this.addSlack(-1);
-				this.addArtificialVariable(1);
 				break;
 		}
 		this.comparison = "=";
@@ -1284,12 +1283,8 @@
 	Matrix.prototype.toString = function () {
 		var str = "";
 		this.forEachRow(function (i, row) {
-			if (i) {
-				str += ",";
-			}
-			str += "[" + row.toString() + "]";
+			str += "<tr><td>" + row.join('</td><td>') + "</td></tr>";
 		});
-		str = "[" + str + "]";
 		return str;
 	};
 	/**
@@ -1487,16 +1482,18 @@
 	Tableau.prototype.toString = function () {
 		var result = "";
 		if (this.matrix) {
-			result += "[" + this.colNames.concat("Constant").toString() + "],";
+			result += "<tr><td>" + this.colNames.concat("Constant").join("</td><td>") + "</td></tr>";
 			result += this.matrix.toString();
 		}
-		return result;
+		return "<table class='table table-collapse table-striped table-bordered tableau'>" + result + "</table>";;
 	};
 	Tableau.prototype.solve = function (isMin) {
 		var getPoint = Tableau.getPivotPoint,
 			point = getPoint(this.matrix, isMin),
 			limit = this.limit;
 		while (point && limit--) {
+			$('#plain-results').append('Pivot : '+ point.row + ', '+ point.column + '<br/>');
+			$('#plain-results').append(this.toString());
 			this.matrix.pivot(point.row, point.column);
 			point = getPoint(this.matrix, isMin);
 			this.cycles++;
@@ -1513,8 +1510,6 @@
 		return JSON.stringify(obj);
 	};
 
-	
-	
 	
 	Simplexify.solve = function (input) {
 		Simplex.validate(input);

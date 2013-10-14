@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Diet Problem Solver</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript">	
+			// avoid broken view bug
+			if(location.hash){
+				location.hash = '';
+				location.reload();
+			}
+		</script>
+		<link rel="stylesheet" href="css/style.css"/>
+	</head>
+	<body>
+		<div id="container">
+			<div id="home">
+				<span class="title">Diet Problem Solver</span>
+				<br /><br />
+				<div>
+					<img src="img/overweight.jpg"/>
+				</div>
+			</div>
+			<div id="div2">
+				<div id="author">
+					<span class="title">About me</span>
+					<div class="info">
+						Hi! I'm Raven John M. Lagrimas. 2010-43168. You can find me at <br />
+						https://github.com/ravenjohn
+						<br />
+						https://facebook.com/ven.lagrimas
+					</div>
+				</div>
+				<div id="dps">
+					<span class="title">Pick your food!</span>
+					<div id="food-grid"></div>
+					<div id="search-div">Type anywhere to search...</div>
+				</div>
+			</div>
+			<div id="div3">
+				<div id="dps-results">
+					<span class="title">Results</span>
+				</div>
+				<div id="simplexify">
+					<span class="title">Simplexify</span>
+					<br class="clearfix"/><br />
+					<div class="float-left">
+						Objective Function : <input type="text" name="objective" id="objective"/>
+						<div id="constraints">
+							<button id="add_constraint">Add Constraint</button>
+							<input type="text" class="constraint"/><br/>
+						</div>
+					</div>
+					<textarea id="simplexify-result"></textarea>
+					<br class="clearfix"/>
+					<button id="maximize">Maximize</button>
+					<button id="minimize">Minimize</button>
+				</div>
+			</div>
+		</div>
+		<div id="menu">
+			<br /><br /><br /><br />
+			<a title="Home" href="#home" class="active" accesskey="1">
+				<img src="img/home.png" alt="Home Icon"/>
+			</a>
+			<a title="Diet Problem Solver" href="#dps" accesskey="2">
+				<img src="img/dps.png" alt="Home Icon"/>
+			</a>
+			<a title="Simplexify" href="#simplexify" accesskey="3">
+				<img src="img/geek.png" alt="Home Icon"/>
+			</a>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+		<script type="text/javascript" src="js/simplexify.min.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+	</body>
+</html>
